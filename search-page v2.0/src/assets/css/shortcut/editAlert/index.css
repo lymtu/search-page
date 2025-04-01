@@ -1,0 +1,71 @@
+.mask.edit > div {
+  min-width: 300px;
+  width: 40vw;
+}
+
+.mask.edit input {
+  width: 100%;
+}
+
+.mask.edit .alert-main .img-style-container {
+  margin: 20px auto 0;
+  padding-left: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.mask.edit .alert-main .img-style-container > div:first-child {
+  width: var(--size);
+  height: var(--size);
+  background-color: #fff;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  border-radius: 0.7rem;
+  -webkit-border-radius: 0.7rem;
+  -moz-border-radius: 0.7rem;
+  -ms-border-radius: 0.7rem;
+  -o-border-radius: 0.7rem;
+}
+
+.mask.edit .alert-main .img-style-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.mask.edit .img-style-container input {
+  margin: 0;
+  padding: 0;
+  width: 3rem;
+  height: 1.5rem;
+  text-align: center;
+}
+
+/* 针对 Chrome 浏览器 */
+.mask.edit .img-style-container input::-webkit-outer-spin-button,
+.mask.edit .img-style-container input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* 针对 Firefox 浏览器 */
+.mask.edit .img-style-container input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.mask.edit .xy-container,
+.mask.edit .scale-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.mask.edit .xy-container label,
+.mask.edit .scale-container label {
+  width: fit-content;
+  display: block;
+  text-wrap: nowrap;
+}

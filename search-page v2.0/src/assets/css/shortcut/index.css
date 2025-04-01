@@ -1,0 +1,6 @@
+@import "./store.css";
+@import "./storeEdit.css";
+@import "./bottom.css";
+
+@import "./deleteAlert/index.css";
+@import "./editAlert/index.css";

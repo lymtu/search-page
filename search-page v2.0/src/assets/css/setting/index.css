@@ -1,0 +1,218 @@
+.svg-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 9;
+}
+
+#settingContainer {
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+#settingContainer.search-focus {
+  transform: translate(100%, 150%) scale(1.25);
+  -webkit-transform: translate(100%, 150%) scale(1.25);
+  -moz-transform: translate(100%, 150%) scale(1.25);
+  -ms-transform: translate(100%, 150%) scale(1.25);
+  -o-transform: translate(100%, 150%) scale(1.25);
+}
+
+.svg-btn {
+  transition: transform 0.25s ease-out;
+  -webkit-transition: transform 0.25s ease-out;
+  -moz-transition: transform 0.25s ease-out;
+  -ms-transition: transform 0.25s ease-out;
+  -o-transition: transform 0.25s ease-out;
+}
+
+.svg-btn svg {
+  stroke: white;
+  transition: transform 0.25s ease;
+  -webkit-transition: transform 0.25s ease;
+  -moz-transition: transform 0.25s ease;
+  -ms-transition: transform 0.25s ease;
+  -o-transition: transform 0.25s ease;
+}
+
+.svg-btn:hover svg {
+  transform: scale(1.25) rotate(90deg);
+  -webkit-transform: scale(1.25) rotate(90deg);
+  -moz-transform: scale(1.25) rotate(90deg);
+  -ms-transform: scale(1.25) rotate(90deg);
+  -o-transform: scale(1.25) rotate(90deg);
+}
+
+@keyframes fadeIn-setting {
+  0% {
+    opacity: 0;
+    transform: translate(10%, 10px) scale(0.9);
+    -webkit-transform: translate(10%, 10px) scale(0.9);
+    -moz-transform: translate(10%, 10px) scale(0.9);
+    -ms-transform: translate(10%, 10px) scale(0.9);
+    -o-transform: translate(10%, 10px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#setting {
+  display: none;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: default;
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+  animation: fadeIn-setting 0.25s ease-in-out;
+  -webkit-animation: fadeIn-setting 0.25s ease-in-out;
+}
+
+#settingContainer:hover #setting {
+  display: block;
+}
+
+#setting > div {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 0.5rem 1rem;
+  transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -ms-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+}
+
+#setting > div:hover {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+#setting > div:first-child {
+  border-radius: 0.5rem 0.5rem 0 0;
+  -webkit-border-radius: 0.5rem 0.5rem 0 0;
+  -moz-border-radius: 0.5rem 0.5rem 0 0;
+  -ms-border-radius: 0.5rem 0.5rem 0 0;
+  -o-border-radius: 0.5rem 0.5rem 0 0;
+}
+
+#setting > div:last-child {
+  border-radius: 0 0 0.5rem 0.5rem;
+  -webkit-border-radius: 0 0 0.5rem 0.5rem;
+  -moz-border-radius: 0 0 0.5rem 0.5rem;
+  -ms-border-radius: 0 0 0.5rem 0.5rem;
+  -o-border-radius: 0 0 0.5rem 0.5rem;
+}
+
+#setting button {
+  width: fit-content;
+  cursor: pointer;
+  background-color: #13ce66;
+  outline: none;
+  color: white;
+  text-wrap: nowrap;
+  font-weight: bold;
+  padding: 0.25rem 0.75rem;
+  border: none;
+  margin: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+  transition: transform 0.25s ease-out;
+  -webkit-transition: transform 0.25s ease-out;
+  -moz-transition: transform 0.25s ease-out;
+  -ms-transition: transform 0.25s ease-out;
+  -o-transition: transform 0.25s ease-out;
+}
+
+#setting button:hover {
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+}
+#setting button:active {
+  transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -moz-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  -o-transform: scale(0.95);
+}
+
+#setting span {
+  width: fit-content;
+  text-wrap: nowrap;
+}
+
+#setting .switch {
+  width: 3rem;
+  height: 1rem;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 1.25rem;
+  -webkit-border-radius: 1.25rem;
+  -moz-border-radius: 1.25rem;
+  -ms-border-radius: 1.25rem;
+  -o-border-radius: 1.25rem;
+  transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -ms-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+}
+
+#setting .switch div {
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  border-radius: 1.5rem;
+  -webkit-border-radius: 1.5rem;
+  -moz-border-radius: 1.5rem;
+  -ms-border-radius: 1.5rem;
+  -o-border-radius: 1.5rem;
+  transform: translate(0%, -50%);
+  -webkit-transform: translate(0%, -50%);
+  -moz-transform: translate(0%, -50%);
+  -ms-transform: translate(0%, -50%);
+  -o-transform: translate(0%, -50%);
+  transition: transform 0.25s ease-in-out;
+  -webkit-transition: transform 0.25s ease-in-out;
+  -moz-transition: transform 0.25s ease-in-out;
+  -ms-transition: transform 0.25s ease-in-out;
+  -o-transition: transform 0.25s ease-in-out;
+}
+
+#setting .switch.true {
+  background-color: #13ce66;
+}
+
+#setting .switch.true div {
+  transform: translate(100%, -50%);
+  -webkit-transform: translate(100%, -50%);
+  -moz-transform: translate(100%, -50%);
+  -ms-transform: translate(100%, -50%);
+  -o-transform: translate(100%, -50%);
+}

@@ -1,0 +1,171 @@
+#shortcutContainer-store > div:first-child {
+  height: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 4px solid rgba(146, 146, 146, 0.5);
+}
+
+#shortcutContainer-store #bottomEditBtn {
+  padding: 0.25rem 2rem;
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
+  text-wrap: nowrap;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+  transition: background-color 0.25s ease;
+  -webkit-transition: background-color 0.25s ease;
+  -moz-transition: background-color 0.25s ease;
+  -ms-transition: background-color 0.25s ease;
+  -o-transition: background-color 0.25s ease;
+}
+
+#shortcutContainer-store #bottomEditBtn:active {
+  transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -moz-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  -o-transform: scale(0.95);
+}
+
+#shortcutContainer-store .searchContainer {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+#shortcutContainer-store input {
+  font-size: large;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+}
+
+#shortcutContainer-store input:focus {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+#shortcutContainer-store .controlContainer {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  stroke: black;
+}
+
+#shortcutContainer-store .controlContainer svg * {
+  stroke: inherit;
+}
+
+#shortcutContainer-store .controlContainer svg {
+  stroke: inherit;
+}
+
+#shortcutContainer-store.addToBottom #bottomEditBtn,
+#shortcutContainer-store.deleteMode .deleteBtn,
+#shortcutContainer-store.editMode .editBtn {
+  background-color: rgba(0, 17, 255, 0.6);
+  stroke: white;
+  color: white;
+}
+
+#shortcutContainer-store .controlContainer button {
+  display: flex;
+  transition: background-color 0.25s ease;
+  -webkit-transition: background-color 0.25s ease;
+  -moz-transition: background-color 0.25s ease;
+  -ms-transition: background-color 0.25s ease;
+  -o-transition: background-color 0.25s ease;
+}
+
+#shortcutContainer-store .controlContainer svg {
+  margin: auto;
+}
+
+#shortcutContainer-store button {
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+}
+
+#shortcutContainer-store button:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+#shortcutContainer-store button:active {
+  transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -moz-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  -o-transform: scale(0.95);
+}
+
+@keyframes fadeIn-store-bottom {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 25%);
+    -webkit-transform: translate(-50%, 25%);
+    -moz-transform: translate(-50%, 25%);
+    -ms-transform: translate(-50%, 25%);
+    -o-transform: translate(-50%, 25%);
+  }
+
+  75% {
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#shortcutContainer-store > div.bottom-container {
+  display: none;
+  gap: 1rem;
+  padding: 0 1rem;
+  padding-top: 0.5rem;
+  width: fit-content;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+  transform: translate(-50%, -25%);
+  -webkit-transform: translate(-50%, -25%);
+  -moz-transform: translate(-50%, -25%);
+  -ms-transform: translate(-50%, -25%);
+  -o-transform: translate(-50%, -25%);
+  animation: fadeIn-store-bottom 0.25s ease-out;
+  -webkit-animation: fadeIn-store-bottom 0.25s ease-out;
+}
+
+#shortcutContainer-store > div.bottom-container.show {
+  display: flex;
+}

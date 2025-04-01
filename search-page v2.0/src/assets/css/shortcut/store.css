@@ -1,0 +1,161 @@
+#shortcutContainer-store-mask {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+  backdrop-filter: blur(2px);
+}
+
+#shortcutContainer-store-mask.show {
+  display: flex;
+}
+
+#shortcutContainer-store {
+  width: 60vw;
+  height: 80vh;
+  margin: auto;
+  background-color: rgba(200, 200, 200, 0.8);
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+  animation: fadeIn 0.25s ease-in-out forwards;
+  -webkit-animation: fadeIn 0.25s ease-in-out forwards;
+}
+
+#shortcutContainer-store .container {
+  overflow-x: hidden;
+  width: 100%;
+  height: fit-content;
+  max-height: 85%;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  row-gap: 2rem;
+}
+
+#shortcutContainer-store .container::-webkit-scrollbar {
+  display: none;
+}
+
+#shortcutContainer-store .container .item {
+  width: var(--size);
+  height: fit-content;
+  margin: auto;
+  position: relative;
+}
+
+#shortcutContainer-store .container .item p {
+  text-align: center;
+  width: 100%;
+  padding: 0 0.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#shortcutContainer-store .container .item > .imgContainer {
+  position: relative;
+  background-color: #fff;
+  width: var(--size);
+  height: var(--size);
+  overflow: hidden;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+  border-radius: calc(var(--size) * 0.25);
+  -webkit-border-radius: calc(var(--size) * 0.25);
+  -moz-border-radius: calc(var(--size) * 0.25);
+  -ms-border-radius: calc(var(--size) * 0.25);
+  -o-border-radius: calc(var(--size) * 0.25);
+}
+
+#shortcutContainer-store .container .item > .imgContainer img {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#shortcutContainer-store.addToBottom .item button[data-for="addToBottom"] {
+  display: initial;
+}
+
+#shortcutContainer-store.deleteMode .item button[data-for="deleteMode"] {
+  display: initial;
+}
+
+#shortcutContainer-store.editMode .item button[data-for="editMode"] {
+  display: initial;
+}
+
+#shortcutContainer-store .item button {
+  width: var(--size);
+  height: calc(var(--size) * 0.5);
+  display: none;
+  position: absolute;
+  top: calc(var(--size) * 0.5);
+  left: 0;
+  text-wrap: nowrap;
+  background-color: rgb(199, 199, 199);
+  font-size: large;
+  font-weight: bold;
+}
+
+#shortcutContainer-store.addToBottom .item[data-isBottom="false"] button {
+  background-color: rgb(255, 255, 255, 0.9);
+}
+
+#shortcutContainer-store .item button:hover {
+  background-color: rgba(199, 199, 199, 0.7);
+  color: rgba(255, 255, 255, 0.6);
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+
+#shortcutContainer-store .item button:active {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+}
+
+@media only screen and (min-width: 1200px) {
+  #shortcutContainer-store .container {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  #shortcutContainer-store .container {
+    grid-template-columns: repeat(10, 1fr);
+  }
+}
+
+#storeButton {
+  width: fit-content;
+  transform: translate(-150%, -50%);
+  -webkit-transform: translate(-150%, -50%);
+  -moz-transform: translate(-150%, -50%);
+  -ms-transform: translate(-150%, -50%);
+  -o-transform: translate(-150%, -50%);
+}
+
+#storeButton.hidden {
+  display: none;
+}
+
+#storeButton.search-focus {
+  transform: translate(50%, 150%) scale(1.25);
+  -webkit-transform: translate(50%, 150%) scale(1.25);
+  -moz-transform: translate(50%, 150%) scale(1.25);
+  -ms-transform: translate(50%, 150%) scale(1.25);
+  -o-transform: translate(50%, 150%) scale(1.25);
+}
