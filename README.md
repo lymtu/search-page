@@ -1,5 +1,6 @@
 # search-page
 a browser search page
+
 v2
 Use Vite as a management tool for typescript.js.
 
