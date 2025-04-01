@@ -1,0 +1,143 @@
+.shortCutOuterContainer {
+  --row-number: 3;
+  --column-number: 8;
+  --item-size: 4rem;
+  --item-interval: 2rem;
+}
+
+/* 适配显示器 */
+/* 1920 * 945 */
+@media only screen and (min-width: 1500px) {
+  .shortCutOuterContainer {
+    /* gird布局行数 */
+    --row-number: 3;
+    /* gird布局列数 */
+    --column-number: 10;
+    /* 元素大小 */
+    --item-size: 5rem;
+    /* 元素间隔 */
+    /* --item-interval: calc((60vw - var(--column-number) * var(--item-size) ) / (var(--column-number) - 1)); */
+    --item-interval: 2rem;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .shortCutOuterContainer {
+    --row-number: 2;
+    --column-number: 6;
+    --item-size: 4rem;
+    --item-interval: 2rem;
+  }
+}
+
+.shortCutOuterContainer {
+  position: absolute;
+  top: 35%;
+  z-index: 9;
+}
+
+.shortCutOuterContainer{
+  width: calc(var(--item-size) * var(--column-number) + var(--item-interval) * (var(--column-number) - 1) + 3rem);
+  height: calc(var(--item-size) * var(--row-number) + var(--item-interval) * (var(--row-number) - 1) + 3rem);
+  overflow-y: scroll;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-rows: repeat(auto-fill, var(--item-size));
+  grid-template-columns: repeat(auto-fill, var(--item-size));
+  gap: var(--item-interval);
+  /* row - 自动布局算法按照通过逐行填充来排列元素，在必要时增加新行 */
+  /* dense- 自动布局算法使用一种“稠密”堆积算法，如果后面出现了稍小的元素，则会试图去填充网格中前面留下的空白。这样做会填上稍大元素留下的空白 */
+  grid-auto-flow: row dense;
+  /* transition: transform 0.5s; */
+}
+
+@keyframes outerHidden {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 30%) scale(1.3);
+    pointer-events: none;
+    opacity: 0;
+  }
+}
+
+@keyframes outerAppear {
+  0% {
+    transform: translate(0, 30%) scale(1.3);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+.shortCutOuterContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.shortCutOuterContainer :-moz-drag-over {
+  cursor: pointer;
+}
+
+.shortCutOuterContainer .outItem {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: #ffffff;
+  /* cursor: pointer; */
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.15s;
+}
+
+.shortCutOuterContainer .outItem:hover {
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+  transform: scale(1.05);
+}
+
+.shortCutOuterContainer .outItem:active {
+  transform: scale(0.9);
+}
+
+.outItem[data-size='1x1'] {
+  width: var(--item-size);
+  height: var(--item-size);
+  grid-row: span 1;
+  grid-column: span 1;
+}
+
+.outItem[data-size='1x2'] {
+  height: var(--item-size);
+  width: calc(var(--item-size) * 2 + var(--item-interval));
+  grid-row: span 1;
+  grid-column: span 2;
+}
+
+.outItem[data-size='2x1'] {
+  height: calc(var(--item-size) * 2 + var(--item-interval));
+  width: var(--item-size);
+  grid-row: span 2;
+  grid-column: span 1;
+}
+
+.outItem[data-size='2x2'] {
+  height: calc(var(--item-size) * 2 + var(--item-interval));
+  width: calc(var(--item-size) * 2 + var(--item-interval));
+  grid-row: span 2;
+  grid-column: span 2;
+}
+
+.outItem > img,
+.shortCut_more > img {
+  width: 100%;
+  margin: auto;
+  pointer-events: none;
+  transition: transform 0.25s;
+}
+
+.outItem[data-size='2x1'] > img {
+  width: auto;
+  height: 100%;
+}

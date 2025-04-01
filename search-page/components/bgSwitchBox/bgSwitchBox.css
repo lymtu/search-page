@@ -1,0 +1,91 @@
+.bgSwitchBox {
+  width: 60%;
+  min-width: 50rem;
+  height: 40rem;
+  padding: 3rem 5rem;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(5px);
+  transition: transform 0.25s ease-in-out;
+  transform-origin: center 2rem;
+}
+
+.bgSwitchBox input[type='text'] {
+  width: 70%;
+  height: 2.5rem;
+  margin: 2rem 2rem 2rem 4rem;
+  padding: 0 0.5rem;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 0.25rem;
+  font-weight: 600;
+  font-size: large;
+  line-height: 2.5rem;
+}
+
+.bgSwitchBox button {
+  width: auto;
+  height: 2.5rem;
+  border: none;
+  padding: 0 1rem;
+  border-radius: 0.25rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.bgSwitchBox button[type='submit'] {
+  background-color: rgba(0, 68, 255, 0.738);
+  color: white;
+}
+
+.bgSwitchBox button[type='submit']:hover {
+  background-color: rgba(0, 68, 255, 0.9);
+}
+
+.bgSwitchBox button[type='button']:enabled:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.bgSwitchBox button[type='button']:enabled:active,
+.bgSwitchBox button[type='submit']:active {
+  transform: scale(0.9);
+}
+
+.bgSwitchBox p::after {
+  content: attr(data-text);
+  font-weight: 900;
+}
+
+.bgSwitchBox_imgCover {
+  width: 30rem;
+  height: 15rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  margin: 3rem auto;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+}
+
+.bgSwitchBox_imgCover > img.error {
+  width: 5rem;
+  height: 5rem;
+  margin: auto;
+}
+
+.bgSwitchBox_imgCover > img.success {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.bgSwitchBox footer {
+  width: 100%;
+  display: flex;
+}
+
+.bgSwitchBox footer button {
+  margin: auto;
+}

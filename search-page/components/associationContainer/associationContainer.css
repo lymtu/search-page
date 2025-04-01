@@ -1,0 +1,78 @@
+.associationContainer {
+  width: calc(50vw + 2rem);
+  max-width: 42rem;
+  height: calc(57vh + 2rem);
+  border-radius: 2rem;
+  background: rgb(255, 255, 255, 0.3);
+  position: absolute;
+  top: 38%;
+  transform-origin: top;
+  transform: scale(0.2, 0);
+  transition: transform 0.5s, border-radius 0.5s;
+  z-index: 99;
+}
+
+.associationContainer_show {
+  border-radius: 0.5rem;
+  transform: scale(1) translateY(-4rem);
+}
+
+.associationContainer_show_faster {
+  transition: transform 0.25s;
+}
+
+.associationContainer:hover {
+  background: rgb(255, 255, 255, 0.4);
+}
+
+.association {
+  width: 100%;
+  height: 5vh;
+  align-items: center;
+  padding: 0 1rem;
+  margin: 0.25rem 0;
+  display: flex;
+  border-radius: 0.5rem;
+  transition: background 0.25s;
+  transition: font-size 0.25s;
+}
+
+.association:hover {
+  background: rgb(255, 255, 255, 0.55);
+  font-weight: bold;
+}
+
+.association p {
+  width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.2rem;
+  white-space: nowrap;
+}
+
+.association img {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: auto;
+  margin-right: 0rem;
+  transition: transform 0.25s;
+}
+
+.association:hover img {
+  transform: scale(1.3);
+}
+
+.association_active {
+  background: rgb(255, 255, 255, 0.55);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.association_active img {
+  transform: scale(1.3);
+}
+
+/* div.association_active img:hover {
+  transform: scale(0.9);
+} */
+

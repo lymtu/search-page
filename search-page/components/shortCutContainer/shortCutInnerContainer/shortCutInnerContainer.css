@@ -1,0 +1,142 @@
+.shortCutInnerContainer {
+  --px: 16px;
+  --column: 8;
+  --item-size: 4rem;
+}
+
+@media only screen and (min-width: 1500px) {
+  .shortCutInnerContainer {
+    --px: 20px;
+    --column: 10;
+    --item-size: 5rem;
+  }
+}
+
+.shortCutInnerContainer {
+  max-width: calc(var(--px) * (4 * 9 + 10) + 4rem);
+  height: 90vh;
+  padding: 1rem 2rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 1rem;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.25s;
+  z-index: 10;
+}
+
+.shortCutInnerContainer > .header {
+  display: flex;
+  padding: 0.25rem 0;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+  border-radius: 1rem;
+  padding: 8px var(--px);
+  background-color: rgba(0, 0, 0, 0.2);
+  gap: var(--px);
+}
+
+.shortCutInnerContainer > .header > .item {
+  width: calc(var(--px) * 4);
+  height: calc(var(--px) * 4);
+  border-radius: 1rem;
+  transition: all 0.25s;
+  overflow: hidden;
+  background-color: #fff;
+  transition: transform 0.15s;
+}
+
+.shortCutInnerContainer > .header > .item:hover {
+  transform: scale(0.9);
+}
+
+.shortCutInnerContainer > .header > .item img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.shortCutInnerContainer > .header > .item.null {
+  background-color: rgba(0, 0, 0, 0.2);
+  background-image: url(../../../img/plus.png);
+  background-size: 2rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-color 0.15s;
+}
+
+.shortCutInnerContainer > .header > .item.null:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.shortCutInnerContainer .neck {
+  padding: 0 5rem;
+  margin: 2rem 0;
+  display: flex;
+}
+
+.shortCutInnerContainer .neck input {
+  width: 80%;
+  height: 2.5rem;
+  margin: auto;
+  padding: 0 0.5rem;
+  border: none;
+  background: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 0.25rem;
+  font-weight: 600;
+}
+
+.shortCutInnerContainer .neck button {
+  width: auto;
+  height: 2.5rem;
+  border: none;
+  margin: auto;
+  padding: 0 1rem;
+  border-radius: 0.25rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.shortCutInnerContainer .neck button:enabled:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.shortCutInnerContainer .neck button:enabled:active {
+  background-color: rgba(255, 255, 255, 0.6);
+  transform: scale(0.9);
+}
+
+.shortCutInnerContainer .body {
+  width: calc(var(--px) * (4 * 9 + 10));
+  max-height: calc(100% - 14rem);
+  overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: calc((var(--px) * (4 * 9 + 10) - var(--item-size) * var(--column)) / (var(--column) - 1));
+  row-gap: 1rem;
+}
+
+.shortCutInnerContainer .body::-webkit-scrollbar {
+  display: none;
+}
+
+.shortCutInnerContainer .body > div {
+  border-radius: 1rem;
+  background-color: #fff;
+  width: var(--item-size);
+  height: var(--item-size);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.shortCutInnerContainer .body > div:hover {
+  transform: scale(0.95);
+}
+
+.shortCutInnerContainer .body > div img {
+  width: 100%;
+  pointer-events: none;
+}

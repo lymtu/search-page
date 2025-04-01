@@ -1,0 +1,67 @@
+@keyframes menuAnimation {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Safari Chrome */
+@-webkit-keyframes menuAnimation {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#rightMenu {
+  width: 13rem;
+  height: auto;
+  position: absolute;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  /* padding: 1rem; */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  transform-origin: top left;
+  /* 动画 */
+  animation: menuAnimation 0.5s ease-in-out;
+  /* -webkit-animation: animation 0.5s ease-in-out; */
+}
+
+#rightMenu > div {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* gap: 0.4rem; */
+  padding: 0.5rem;
+  transition: background-color 0.25s;
+  border-radius: 0.5rem;
+}
+
+#rightMenu:hover {
+  transition: backdrop-filter 0.23s ease-in-out;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+#rightMenu > div:hover {
+  background-color: rgb(255, 255, 255, 0.6);
+}

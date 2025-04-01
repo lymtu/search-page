@@ -1,0 +1,58 @@
+.shortCutUnderContainer {
+  --i: 1;
+  --px: 14px;
+}
+
+@media screen and (min-width: 1500px) {
+  .shortCutUnderContainer {
+    --px: 18px;
+  }
+}
+
+.shortCutUnderContainer {
+  position: absolute;
+  bottom: 0;
+  transition: transform 0.25s;
+}
+
+.shortCutUnderContainer.hidden {
+  transform: translateY(100%);
+}
+
+
+.shortCutUnderContainer > .box {
+  height: calc(var(--px) * 4 + 1rem);
+  display: flex;
+  align-items: flex-end;
+  padding: 0.5rem 0;
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.shortCutUnderContainer .item {
+  width: calc(var(--i) * var(--px) * 4);
+  height: calc(var(--i) * var(--px) * 4);
+  margin-bottom: calc(var(--i) * 8px - 8px);
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.shortCutUnderContainer .item img {
+  width: calc(var(--i) * var(--px) * 4);
+}
+
+.shortCutUnderContainer .gap {
+  width: calc(var(--i) * var(--px));
+  height: calc(var(--px) * 4);
+}
+
+.shortCutUnderContainer .more {
+  background-color: #fff;
+}
+
+.shortCutUnderContainer .more img {
+  width: 100%;
+  height: 100%;
+  transform: scale(0.5);
+}
